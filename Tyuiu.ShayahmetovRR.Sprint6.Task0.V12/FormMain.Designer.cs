@@ -81,6 +81,7 @@
 			this.textBoxVarX_SRR.Name = "textBoxVarX_SRR";
 			this.textBoxVarX_SRR.Size = new System.Drawing.Size(100, 20);
 			this.textBoxVarX_SRR.TabIndex = 0;
+			this.textBoxVarX_SRR.TextChanged += new System.EventHandler(this.textBoxVarX_SRR_TextChanged);
 			// 
 			// groupBoxResult_SRR
 			// 

@@ -41,5 +41,10 @@ namespace Tyuiu.ShayahmetovRR.Sprint6.Task0.V12
 		{
 			MessageBox.Show("Таск 0 выполнил студент группы АСОиУб-23-1 Шаяхметов Руслан Раилевич :)", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Question);
 		}
+
+		private void textBoxVarX_SRR_TextChanged(object sender, EventArgs e)
+		{
+
+		}
 	}
 }
