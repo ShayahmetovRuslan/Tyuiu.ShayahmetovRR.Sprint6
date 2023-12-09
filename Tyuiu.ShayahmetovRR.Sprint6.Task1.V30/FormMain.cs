@@ -21,6 +21,8 @@ namespace Tyuiu.ShayahmetovRR.Sprint6.Task1.V30
 
 		private void buttonDone_SRR_Click(object sender, EventArgs e)
 		{
+			try
+			{
 				int startValue = Convert.ToInt32(textBoxStartValue_SRR.Text);
 				int stopValue = Convert.ToInt32(textBoxStopValue_SRR.Text);
 
@@ -43,12 +45,21 @@ namespace Tyuiu.ShayahmetovRR.Sprint6.Task1.V30
 					startValue++;
 				}
 				textBoxResult_SRR.AppendText("+----------+----------+" + Environment.NewLine);
-
+			}
+			catch
+			{
+				MessageBox.Show("Введены неверные данные", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}		
 		}
 
 		private void buttonInfo_SRR_Click(object sender, EventArgs e)
 		{
 			MessageBox.Show("Таск 1 выполнил студент группы АСОиУб-23-1 Шаяхметов Руслан Раилевич :)", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Question);
+		}
+
+		private void FormMain_Load(object sender, EventArgs e)
+		{
+
 		}
 	}
 }
