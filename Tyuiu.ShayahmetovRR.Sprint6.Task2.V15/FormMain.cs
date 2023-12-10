@@ -47,7 +47,7 @@ namespace Tyuiu.ShayahmetovRR.Sprint6.Task2.V15
 
 		private void buttonInfo_SRR_Click(object sender, EventArgs e)
 		{
-			MessageBox.Show("Таск 1 выполнил студент группы АСОиУб-23-1 Шаяхметов Руслан Раилевич :)", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Question);
+			MessageBox.Show("Таск 2 выполнил студент группы АСОиУб-23-1 Шаяхметов Руслан Раилевич :)", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Question);
 		}
 	}
 }

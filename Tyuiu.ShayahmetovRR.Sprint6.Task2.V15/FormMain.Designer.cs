@@ -46,6 +46,7 @@
 			this.gridViewTextBoxVarX_SRR = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.labelResult_SRR = new System.Windows.Forms.Label();
 			this.groupBoxCondition_SRR = new System.Windows.Forms.GroupBox();
+			this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
 			this.groupBoxStartStopValue_SRR.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.groupBoxOutput_SRR.SuspendLayout();
@@ -252,6 +253,7 @@
 		private System.Windows.Forms.DataVisualization.Charting.Chart chartFunction_SSR;
 		private System.Windows.Forms.DataGridViewTextBoxColumn X;
 		private System.Windows.Forms.DataGridViewTextBoxColumn gridViewTextBoxVarX_SRR;
+		private System.ComponentModel.BackgroundWorker backgroundWorker1;
 	}
 }
 
