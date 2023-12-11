@@ -28,10 +28,11 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-			System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-			System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+			System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+			System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
 			this.groupBoxCondition_SRR = new System.Windows.Forms.GroupBox();
+			this.labelCondition_SRR = new System.Windows.Forms.Label();
 			this.groupBoxOutput_SRR = new System.Windows.Forms.GroupBox();
 			this.labelResult_SSR = new System.Windows.Forms.Label();
 			this.textBoxResult_SRR = new System.Windows.Forms.TextBox();
@@ -44,7 +45,7 @@
 			this.buttonSave_SRR = new System.Windows.Forms.Button();
 			this.chartGraph_SRR = new System.Windows.Forms.DataVisualization.Charting.Chart();
 			this.buttonHelp_SRR = new System.Windows.Forms.Button();
-			this.labelCondition_SRR = new System.Windows.Forms.Label();
+			this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
 			this.groupBoxCondition_SRR.SuspendLayout();
 			this.groupBoxOutput_SRR.SuspendLayout();
 			this.groupBoxInput_SSR.SuspendLayout();
@@ -60,6 +61,16 @@
 			this.groupBoxCondition_SRR.TabIndex = 0;
 			this.groupBoxCondition_SRR.TabStop = false;
 			this.groupBoxCondition_SRR.Text = "Условие";
+			// 
+			// labelCondition_SRR
+			// 
+			this.labelCondition_SRR.AutoSize = true;
+			this.labelCondition_SRR.Location = new System.Drawing.Point(7, 20);
+			this.labelCondition_SRR.Name = "labelCondition_SRR";
+			this.labelCondition_SRR.Size = new System.Drawing.Size(154, 78);
+			this.labelCondition_SRR.TabIndex = 0;
+			this.labelCondition_SRR.Text = "Написать программу,\r\nкоторая выводит\r\nтаблицу значений функции, \r\nотобразить это " +
+    "на графике, \r\nсохранить в отдельный \r\ntxt файл при помощи кнопки.";
 			// 
 			// groupBoxOutput_SRR
 			// 
@@ -156,18 +167,18 @@
 			// 
 			// chartGraph_SRR
 			// 
-			chartArea2.Name = "ChartArea1";
-			this.chartGraph_SRR.ChartAreas.Add(chartArea2);
-			legend2.Name = "Legend1";
-			this.chartGraph_SRR.Legends.Add(legend2);
+			chartArea1.Name = "ChartArea1";
+			this.chartGraph_SRR.ChartAreas.Add(chartArea1);
+			legend1.Name = "Legend1";
+			this.chartGraph_SRR.Legends.Add(legend1);
 			this.chartGraph_SRR.Location = new System.Drawing.Point(425, 13);
 			this.chartGraph_SRR.Name = "chartGraph_SRR";
 			this.chartGraph_SRR.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-			series2.ChartArea = "ChartArea1";
-			series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-			series2.Legend = "Legend1";
-			series2.Name = "Series1";
-			this.chartGraph_SRR.Series.Add(series2);
+			series1.ChartArea = "ChartArea1";
+			series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+			series1.Legend = "Legend1";
+			series1.Name = "Series1";
+			this.chartGraph_SRR.Series.Add(series1);
 			this.chartGraph_SRR.Size = new System.Drawing.Size(363, 413);
 			this.chartGraph_SRR.TabIndex = 5;
 			this.chartGraph_SRR.Text = "chartGraph_SRR";
@@ -180,16 +191,7 @@
 			this.buttonHelp_SRR.TabIndex = 6;
 			this.buttonHelp_SRR.Text = "?";
 			this.buttonHelp_SRR.UseVisualStyleBackColor = true;
-			// 
-			// labelCondition_SRR
-			// 
-			this.labelCondition_SRR.AutoSize = true;
-			this.labelCondition_SRR.Location = new System.Drawing.Point(7, 20);
-			this.labelCondition_SRR.Name = "labelCondition_SRR";
-			this.labelCondition_SRR.Size = new System.Drawing.Size(154, 78);
-			this.labelCondition_SRR.TabIndex = 0;
-			this.labelCondition_SRR.Text = "Написать программу,\r\nкоторая выводит\r\nтаблицу значений функции, \r\nотобразить это " +
-    "на графике, \r\nсохранить в отдельный \r\ntxt файл при помощи кнопки.";
+			this.buttonHelp_SRR.Click += new System.EventHandler(this.buttonHelp_SRR_Click);
 			// 
 			// FormMain
 			// 
@@ -204,6 +206,7 @@
 			this.Controls.Add(this.groupBoxOutput_SRR);
 			this.Controls.Add(this.groupBoxCondition_SRR);
 			this.Name = "FormMain";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Спринт 6 | Таск 4 | Вариант 19 | Шаяхметов Р. Р.";
 			this.groupBoxCondition_SRR.ResumeLayout(false);
 			this.groupBoxCondition_SRR.PerformLayout();
@@ -232,6 +235,7 @@
 		private System.Windows.Forms.DataVisualization.Charting.Chart chartGraph_SRR;
 		private System.Windows.Forms.Label labelCondition_SRR;
 		private System.Windows.Forms.Button buttonHelp_SRR;
+		private System.ComponentModel.BackgroundWorker backgroundWorker1;
 	}
 }
 

@@ -13,7 +13,7 @@ namespace Tyuiu.ShayahmetovRR.Sprint6.Task4.V19.Test
 			int startValue = -5;
 			int stopValue = 5;
 
-			int len = stopValue - startValue;
+			int len = stopValue - startValue + 1;
 			double[] wait = new double[len];
 
 			wait[0] = 23.61;

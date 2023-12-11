@@ -63,5 +63,10 @@ namespace Tyuiu.ShayahmetovRR.Sprint6.Task4.V19
 			}
 
 		}
+
+		private void buttonHelp_SRR_Click(object sender, EventArgs e)
+		{
+			MessageBox.Show("Таск 4 выполнил студент группы АСОиУб-23-1 Шаяхметов Руслан Раилевич :)", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Question);
+		}
 	}
 }
