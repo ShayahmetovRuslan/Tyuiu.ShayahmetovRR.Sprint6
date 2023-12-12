@@ -148,7 +148,11 @@
 			this.Controls.Add(this.groupBoxCondition_SRR);
 			this.Controls.Add(this.buttonOpenFile_SRR);
 			this.Controls.Add(this.buttonDone_SRR);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.Name = "FormMain";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Спринт 6 | Таск 6 | Вариант 16 | Шаяхметов Р. Р.";
 			this.groupBoxCondition_SRR.ResumeLayout(false);
 			this.groupBoxCondition_SRR.PerformLayout();
